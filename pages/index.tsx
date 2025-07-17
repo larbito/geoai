@@ -9,7 +9,10 @@ export default function Home() {
         <title>ChatRank - AI Visibility Checker</title>
         <meta name="description" content="Find out if ChatGPT recommends your brand when users ask for tools, services, or alternatives" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#0ea5e9" />
       </Head>
 
       {/* Header */}

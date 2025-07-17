@@ -1,0 +1,16 @@
+{
+  "name": "ChatRank - AI Visibility Checker",
+  "short_name": "ChatRank",
+  "description": "Find out if ChatGPT recommends your brand when users ask for tools, services, or alternatives",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+} 
