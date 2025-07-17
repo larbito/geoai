@@ -84,7 +84,7 @@ export default function Contact() {
                 Contact
               </Link>
               <Link
-                href="/check"
+                href="/register"
                 className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Get Started
@@ -129,7 +129,7 @@ export default function Contact() {
                 </Link>
                 <div className="pt-4 mt-4 border-t border-neutral-200">
                   <Link
-                    href="/check"
+                    href="/register"
                     className="flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 shadow-lg"
                   >
                     Get Started
@@ -324,7 +324,7 @@ export default function Contact() {
                   <h3 className="text-xl font-bold text-neutral-900 mb-4">Quick Actions</h3>
                   <div className="space-y-4">
                     <Link
-                      href="/check"
+                      href="/register"
                       className="block p-4 bg-white rounded-xl border border-neutral-200 hover:border-primary-300 transition-all duration-200 group"
                     >
                       <div className="flex items-center justify-between">
@@ -464,7 +464,7 @@ export default function Contact() {
                 <li><Link href="/#features" className="text-neutral-400 hover:text-white transition-colors">Features</Link></li>
                 <li><Link href="/pricing" className="text-neutral-400 hover:text-white transition-colors">Pricing</Link></li>
                 <li><Link href="/#how-it-works" className="text-neutral-400 hover:text-white transition-colors">How It Works</Link></li>
-                <li><Link href="/check" className="text-neutral-400 hover:text-white transition-colors">Free Analysis</Link></li>
+                <li><Link href="/register" className="text-neutral-400 hover:text-white transition-colors">Free Analysis</Link></li>
               </ul>
             </div>
 

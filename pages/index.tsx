@@ -64,7 +64,7 @@ export default function Home() {
                 Contact
               </Link>
               <Link
-                href="/check"
+                href="/register"
                 className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Get Started
@@ -109,7 +109,7 @@ export default function Home() {
                 </Link>
                 <div className="pt-4 mt-4 border-t border-neutral-200">
                   <Link
-                    href="/check"
+                    href="/register"
                     className="flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 shadow-lg"
                   >
                     Get Started
@@ -213,7 +213,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <Link
-                  href="/check"
+                  href="/register"
                   className="group px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center text-lg"
                 >
                   Start Free Analysis
@@ -800,7 +800,7 @@ export default function Home() {
                     Contact Sales
                   </Link>
                   <Link
-                    href="/check"
+                    href="/register"
                     className="px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   >
                     Start Free Trial
@@ -869,7 +869,7 @@ export default function Home() {
               {/* CTA Button */}
               <div className="mb-12">
                 <Link
-                  href="/check"
+                  href="/register"
                   className="group inline-flex items-center px-12 py-5 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-bold rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 text-xl"
                 >
                   Start Your Free Analysis Now
@@ -967,7 +967,7 @@ export default function Home() {
                 <li><Link href="/#features" className="text-neutral-400 hover:text-white transition-colors">Features</Link></li>
                 <li><Link href="/pricing" className="text-neutral-400 hover:text-white transition-colors">Pricing</Link></li>
                 <li><Link href="/#how-it-works" className="text-neutral-400 hover:text-white transition-colors">How It Works</Link></li>
-                <li><Link href="/check" className="text-neutral-400 hover:text-white transition-colors">Free Analysis</Link></li>
+                <li><Link href="/register" className="text-neutral-400 hover:text-white transition-colors">Free Analysis</Link></li>
               </ul>
             </div>
 
