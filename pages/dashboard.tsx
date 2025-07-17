@@ -114,9 +114,12 @@ export default function Dashboard() {
               <h3 className="text-lg font-semibold text-gray-900">Start Analysis</h3>
             </div>
             <p className="text-gray-600 mb-4">Begin tracking your AI visibility across different platforms</p>
-            <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-colors">
+            <Link 
+              href="/check"
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-colors text-center block"
+            >
               Start Now
-            </button>
+            </Link>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border p-6 hover:shadow-md transition-shadow">
@@ -179,15 +182,23 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Demo Notice */}
-        <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-          <div className="flex items-center space-x-2">
-            <svg className="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p className="text-sm text-yellow-800">
-              <strong>Demo Mode:</strong> This is a demonstration dashboard. In the full version, you'll see real AI visibility analytics and insights.
+        {/* Next Steps Section */}
+        <div className="mt-8 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl shadow-lg p-8 text-white">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-4">Ready to Check Your AI Visibility?</h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Discover how AI models respond when users search for solutions in your industry. 
+              Get detailed insights and actionable recommendations in minutes.
             </p>
+            <Link 
+              href="/check"
+              className="inline-flex items-center bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Run Your First AI Check
+            </Link>
           </div>
         </div>
       </main>
