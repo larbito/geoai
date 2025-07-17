@@ -357,15 +357,15 @@ export default function Contact() {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg">
                       <span className="font-medium text-gray-900">Sales Inquiries</span>
-                      <span className="text-green-600 font-semibold">< 2 hours</span>
+                      <span className="text-green-600 font-semibold">&lt; 2 hours</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
                       <span className="font-medium text-gray-900">Technical Support</span>
-                      <span className="text-blue-600 font-semibold">< 4 hours</span>
+                      <span className="text-blue-600 font-semibold">&lt; 4 hours</span>
                     </div>
                     <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg">
                       <span className="font-medium text-gray-900">General Inquiries</span>
-                      <span className="text-purple-600 font-semibold">< 24 hours</span>
+                      <span className="text-purple-600 font-semibold">&lt; 24 hours</span>
                     </div>
                   </div>
                 </div>
