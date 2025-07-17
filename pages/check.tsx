@@ -1,7 +1,247 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useVisibilityCheck } from '../hooks/useVisibilityCheck'
+
+// Category options for the multi-select
+const CATEGORY_OPTIONS = [
+  'AI Tools',
+  'CRM',
+  'Marketing Platform',
+  'E-learning Platform',
+  'Fitness App',
+  'Legal Software',
+  'Accounting Software',
+  'Healthcare SaaS',
+  'Developer Tools',
+  'HR Management',
+  'Website Builder',
+  'Email Marketing',
+  'Cloud Hosting',
+  'Search Engine',
+  'Project Management',
+  'Customer Support Software',
+  'No-Code Platform',
+  'Real Estate Platform',
+  'Video Conferencing',
+  'Document Signing',
+  'Travel Booking',
+  'Language Learning',
+  'Online Store Platform',
+  'Food Delivery',
+  'VPN Service',
+  'Payment Processor',
+  'Subscription Billing',
+  'Online Marketplace',
+  'Remote Work Tools',
+  'Cybersecurity',
+  'Social Media Scheduler',
+  'Other'
+]
+
+// Multi-select dropdown component
+function MultiSelectDropdown({ 
+  categories, 
+  onCategoriesChange, 
+  disabled = false 
+}: {
+  categories: string[]
+  onCategoriesChange: (categories: string[]) => void
+  disabled?: boolean
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [otherValue, setOtherValue] = useState('')
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Filter categories based on search term
+  const filteredCategories = CATEGORY_OPTIONS.filter(category =>
+    category.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  // Handle clicking outside to close dropdown
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const toggleCategory = (category: string) => {
+    if (categories.includes(category)) {
+      onCategoriesChange(categories.filter(c => c !== category))
+      if (category === 'Other') {
+        setOtherValue('')
+      }
+    } else {
+      if (categories.length < 3) {
+        onCategoriesChange([...categories, category])
+      }
+    }
+  }
+
+  const handleOtherSubmit = () => {
+    if (otherValue.trim() && !categories.includes(otherValue.trim())) {
+      if (categories.length < 3) {
+        const newCategories = categories.filter(c => c !== 'Other')
+        onCategoriesChange([...newCategories, otherValue.trim()])
+        setOtherValue('')
+      }
+    }
+  }
+
+  const removeCategory = (category: string) => {
+    onCategoriesChange(categories.filter(c => c !== category))
+  }
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      {/* Selected categories chips */}
+      {categories.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-3">
+          {categories.map((category) => (
+            <span
+              key={category}
+              className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200"
+            >
+              <span className="mr-1">🏷️</span>
+              {category}
+              <button
+                type="button"
+                onClick={() => removeCategory(category)}
+                className="ml-2 text-blue-600 hover:text-blue-800 focus:outline-none"
+                disabled={disabled}
+              >
+                ×
+              </button>
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Dropdown trigger */}
+      <div
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+        className={`w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all backdrop-blur-sm bg-white/80 cursor-pointer flex items-center justify-between ${
+          disabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-gray-400'
+        }`}
+      >
+        <span className="flex items-center">
+          <span className="mr-2">📂</span>
+          {categories.length === 0 ? (
+            <span className="text-gray-500">🛠️ Select 1-3 categories...</span>
+          ) : (
+            <span>{categories.length} categor{categories.length === 1 ? 'y' : 'ies'} selected</span>
+          )}
+        </span>
+        <svg
+          className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      {/* Dropdown menu */}
+      {isOpen && (
+        <div className="absolute z-50 w-full mt-2 bg-white/95 backdrop-blur-md border border-gray-200 rounded-xl shadow-2xl max-h-80 overflow-hidden">
+          {/* Search input */}
+          <div className="p-3 border-b border-gray-200">
+            <input
+              type="text"
+              placeholder="🔍 Search categories..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+            />
+          </div>
+
+          {/* Category count indicator */}
+          <div className="px-3 py-2 bg-blue-50 text-sm text-blue-700 flex items-center">
+            <span className="mr-2">ℹ️</span>
+            Select {categories.length}/3 categories
+          </div>
+
+          {/* Categories list */}
+          <div className="max-h-48 overflow-y-auto">
+            {filteredCategories.map((category) => (
+              <div key={category}>
+                <button
+                  type="button"
+                  onClick={() => toggleCategory(category)}
+                  disabled={!categories.includes(category) && categories.length >= 3}
+                  className={`w-full px-4 py-3 text-left hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors flex items-center justify-between text-sm ${
+                    categories.includes(category)
+                      ? 'bg-blue-50 text-blue-700 font-medium'
+                      : 'text-gray-700'
+                  } ${
+                    !categories.includes(category) && categories.length >= 3
+                      ? 'opacity-50 cursor-not-allowed'
+                      : ''
+                  }`}
+                >
+                  <span className="flex items-center">
+                    <span className="mr-2">
+                      {category === 'AI Tools' && '🤖'}
+                      {category === 'CRM' && '👥'}
+                      {category === 'Marketing Platform' && '📢'}
+                      {category === 'E-learning Platform' && '📚'}
+                      {category === 'Fitness App' && '💪'}
+                      {category === 'Legal Software' && '⚖️'}
+                      {category === 'Developer Tools' && '👨‍💻'}
+                      {category === 'Other' && '✏️'}
+                      {!['AI Tools', 'CRM', 'Marketing Platform', 'E-learning Platform', 'Fitness App', 'Legal Software', 'Developer Tools', 'Other'].includes(category) && '🔧'}
+                    </span>
+                    {category}
+                  </span>
+                  {categories.includes(category) && (
+                    <span className="text-blue-600">✓</span>
+                  )}
+                </button>
+
+                {/* Other category input */}
+                {category === 'Other' && categories.includes('Other') && (
+                  <div className="px-4 pb-3">
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        placeholder="Enter custom category..."
+                        value={otherValue}
+                        onChange={(e) => setOtherValue(e.target.value)}
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                        onKeyPress={(e) => e.key === 'Enter' && handleOtherSubmit()}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleOtherSubmit}
+                        disabled={!otherValue.trim()}
+                        className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {filteredCategories.length === 0 && (
+            <div className="px-4 py-6 text-center text-gray-500">
+              <span className="mr-2">🔍</span>
+              No categories found
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function Check() {
   const router = useRouter()
@@ -9,7 +249,7 @@ export default function Check() {
   const [formData, setFormData] = useState({
     brandName: '',
     website: '',
-    category: '',
+    categories: [] as string[],
     targetAudience: ''
   })
   const [showResults, setShowResults] = useState(false)
@@ -80,34 +320,63 @@ export default function Check() {
     }))
   }
 
-  const generateGptUnderstanding = (brand: string, category: string) => {
+  const handleCategoriesChange = (categories: string[]) => {
+    setFormData(prev => ({
+      ...prev,
+      categories
+    }))
+  }
+
+  const generateGptUnderstanding = (brand: string, categories: string[]) => {
     // Mock GPT understanding based on brand recognition
     const knownBrands = ['slack', 'hubspot', 'notion', 'figma', 'zoom', 'salesforce', 'microsoft', 'google', 'apple', 'meta', 'facebook', 'instagram', 'twitter', 'linkedin', 'youtube']
     const isKnown = knownBrands.some(known => brand.toLowerCase().includes(known) || known.includes(brand.toLowerCase()))
     
+    const categoryText = categories.length > 1 ? `${categories.join(', ')} platforms` : `${categories[0]} platform`
+    
     if (isKnown) {
-      return `🤖 GPT recognizes "${brand}" as a well-established ${category} platform. High awareness detected — verifying deeper visibility across search contexts...`
+      return `🤖 GPT recognizes "${brand}" as a well-established ${categoryText}. High awareness detected — verifying deeper visibility across search contexts...`
     } else {
-      return `🤖 GPT shows limited recognition of "${brand}" in the ${category} space. Brand not clearly recognized — scanning for mentions and competitive positioning...`
+      return `🤖 GPT shows limited recognition of "${brand}" in the ${categoryText} space. Brand not clearly recognized — scanning for mentions and competitive positioning...`
     }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!formData.brandName.trim() || !formData.category.trim() || !formData.targetAudience.trim()) {
-      alert('Please fill in all required fields')
+    // Validation
+    if (!formData.brandName.trim()) {
+      alert('Please enter your brand name')
+      return
+    }
+    
+    if (formData.categories.length === 0) {
+      alert('Please select at least 1 category')
+      return
+    }
+    
+    if (formData.categories.length > 3) {
+      alert('Please select maximum 3 categories')
+      return
+    }
+    
+    if (!formData.targetAudience.trim()) {
+      alert('Please enter your target audience')
       return
     }
 
     // Generate GPT understanding
-    setGptUnderstanding(generateGptUnderstanding(formData.brandName, formData.category))
+    setGptUnderstanding(generateGptUnderstanding(formData.brandName, formData.categories))
+
+    console.log('Form submitted with data:', formData)
 
     try {
+      // For now, we'll use the first category for the existing API
+      // Later this can be enhanced to handle multiple categories
       await checkVisibility({
         brandName: formData.brandName.trim(),
         website: formData.website.trim(),
-        category: formData.category.trim(),
+        category: formData.categories[0], // Use first category for now
         targetAudience: formData.targetAudience.trim()
       })
       setShowResults(true)
@@ -243,17 +512,15 @@ export default function Check() {
                   <span className="mr-2">📂</span>
                   Product/Service Category *
                 </label>
-                <input
-                  id="category"
-                  name="category"
-                  type="text"
-                  required
-                  value={formData.category}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all backdrop-blur-sm bg-white/80"
-                  placeholder="🛠️ e.g., CRM, Legal SaaS, Marketing Tool, AI Platform"
+                <MultiSelectDropdown
+                  categories={formData.categories}
+                  onCategoriesChange={handleCategoriesChange}
                   disabled={loading}
                 />
+                <p className="text-xs text-gray-500 mt-2 flex items-center">
+                  <span className="mr-1">💡</span>
+                  Select 1-3 categories to analyze your brand across different market segments
+                </p>
               </div>
 
               <div>
@@ -276,7 +543,7 @@ export default function Check() {
 
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || formData.categories.length === 0}
                 className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center"
               >
                 {loading ? (
