@@ -124,139 +124,44 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-blue-50"></div>
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
           
-          {/* Floating AI Platform Icons - Repositioned for better visibility */}
-          
-          {/* Top Row - Above content */}
-          <div className="absolute top-16 left-8 lg:left-16 animate-float">
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="ChatGPT" className="w-6 h-6" style={{filter: 'invert(0)'}} />
+          {/* Clean Floating AI Platform Icons - Top 4 platforms only */}
+          <div className="absolute top-24 left-16 animate-float">
+            <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-90 hover:opacity-100 transition-opacity">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="ChatGPT" className="w-8 h-8" style={{filter: 'invert(0)'}} />
               </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">ChatGPT</p>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">ChatGPT</p>
             </div>
           </div>
           
-          <div className="absolute top-12 left-1/4 animate-float-delayed">
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" alt="Claude" className="w-6 h-6" style={{filter: 'invert(0)'}} />
+          <div className="absolute top-32 right-16 animate-float-delayed">
+            <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-90 hover:opacity-100 transition-opacity">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" alt="Claude" className="w-8 h-8" style={{filter: 'invert(0)'}} />
               </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Claude</p>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Claude</p>
             </div>
           </div>
           
-          <div className="absolute top-20 right-1/4 animate-float" style={{ animationDelay: '0.5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlegemini.svg" alt="Gemini" className="w-6 h-6" style={{filter: 'invert(0)'}} />
+          <div className="absolute bottom-24 left-20 animate-float" style={{ animationDelay: '1s' }}>
+            <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-90 hover:opacity-100 transition-opacity">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlegemini.svg" alt="Gemini" className="w-8 h-8" style={{filter: 'invert(0)'}} />
               </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Gemini</p>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Gemini</p>
             </div>
           </div>
           
-          <div className="absolute top-16 right-8 lg:right-16 animate-float-delayed" style={{ animationDelay: '1s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="absolute bottom-32 right-20 animate-float-delayed" style={{ animationDelay: '1.5s' }}>
+            <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-90 hover:opacity-100 transition-opacity">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                <svg className="w-8 h-8" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M26.7 14.0 C26.7 15.8 26.0 17.5 24.8 18.7 L24.8 18.7 C23.6 19.9 21.9 20.6 20.1 20.6 L7.9 20.6 C6.1 20.6 4.4 19.9 3.2 18.7 L3.2 18.7 C2.0 17.5 1.3 15.8 1.3 14.0 L1.3 14.0 C1.3 12.2 2.0 10.5 3.2 9.3 L3.2 9.3 C4.4 8.1 6.1 7.4 7.9 7.4 L20.1 7.4 C21.9 7.4 23.6 8.1 24.8 9.3 L24.8 9.3 C26.0 10.5 26.7 12.2 26.7 14.0 Z" fill="#1FB8CD"/>
                   <path d="M20.2 14.0 C20.2 15.1 19.7 16.1 18.9 16.9 C18.1 17.7 17.1 18.2 16.0 18.2 C14.9 18.2 13.9 17.7 13.1 16.9 C12.3 16.1 11.8 15.1 11.8 14.0 C11.8 12.9 12.3 11.9 13.1 11.1 C13.9 10.3 14.9 9.8 16.0 9.8 C17.1 9.8 18.1 10.3 18.9 11.1 C19.7 11.9 20.2 12.9 20.2 14.0 Z" fill="white"/>
                   <path d="M16.4 14.0 C16.4 14.2 16.3 14.4 16.2 14.5 C16.1 14.6 15.9 14.7 15.7 14.7 C15.5 14.7 15.3 14.6 15.2 14.5 C15.1 14.4 15.0 14.2 15.0 14.0 C15.0 13.8 15.1 13.6 15.2 13.5 C15.3 13.4 15.5 13.3 15.7 13.3 C15.9 13.3 16.1 13.4 16.2 13.5 C16.3 13.6 16.4 13.8 16.4 14.0 Z" fill="#1FB8CD"/>
                 </svg>
               </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Perplexity</p>
-            </div>
-          </div>
-          
-          {/* Side Icons - Middle area */}
-          <div className="absolute top-1/2 left-4 transform -translate-y-1/2 animate-float" style={{ animationDelay: '2s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftbing.svg" alt="Bing AI" className="w-6 h-6" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Bing AI</p>
-            </div>
-          </div>
-          
-          <div className="absolute top-1/2 right-4 transform -translate-y-1/2 animate-float-delayed" style={{ animationDelay: '1.5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" alt="Llama" className="w-6 h-6" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Llama</p>
-            </div>
-          </div>
-          
-          {/* Bottom Row - Below content */}
-          <div className="absolute bottom-16 left-8 lg:left-16 animate-float" style={{ animationDelay: '3s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/midjourney.svg" alt="Midjourney" className="w-6 h-6" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Midjourney</p>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-20 left-1/4 animate-float-delayed" style={{ animationDelay: '2.5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stability.svg" alt="Stable Diffusion" className="w-6 h-6" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Stable AI</p>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-12 right-1/4 animate-float" style={{ animationDelay: '3.5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cohere.svg" alt="Cohere" className="w-6 h-6" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Cohere</p>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-16 right-8 lg:right-16 animate-float-delayed" style={{ animationDelay: '4s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/huggingface.svg" alt="Hugging Face" className="w-6 h-6" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Hugging Face</p>
-            </div>
-          </div>
-          
-          {/* Additional platforms in corners */}
-          <div className="absolute top-32 left-4 animate-float" style={{ animationDelay: '4.5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-100 opacity-60 hover:opacity-100 transition-opacity">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/replicate.svg" alt="Replicate" className="w-5 h-5" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Replicate</p>
-            </div>
-          </div>
-          
-          <div className="absolute top-40 right-4 animate-float-delayed" style={{ animationDelay: '5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-100 opacity-60 hover:opacity-100 transition-opacity">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/runwayml.svg" alt="Runway" className="w-5 h-5" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Runway</p>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-32 left-4 animate-float" style={{ animationDelay: '5.5s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-100 opacity-60 hover:opacity-100 transition-opacity">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jasper.svg" alt="Jasper" className="w-5 h-5" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Jasper</p>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-40 right-4 animate-float-delayed" style={{ animationDelay: '6s' }}>
-            <div className="bg-white rounded-2xl shadow-lg p-2 border border-gray-100 opacity-60 hover:opacity-100 transition-opacity">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cursor.svg" alt="Cursor" className="w-5 h-5" style={{filter: 'invert(0)'}} />
-              </div>
-              <p className="text-xs text-gray-600 mt-1 text-center font-medium">Cursor</p>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Perplexity</p>
             </div>
           </div>
 
@@ -380,6 +285,157 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Platforms Showcase Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Monitor Your Visibility Across 
+                <span className="block bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">
+                  Every AI Platform
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From conversational AI to creative tools, track how your business appears in the complete AI ecosystem
+              </p>
+            </div>
+            
+            {/* Main AI Platforms Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="ChatGPT" className="w-12 h-12" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 text-center">ChatGPT</h3>
+                <p className="text-xs text-gray-500 text-center mt-1">Conversational AI</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" alt="Claude" className="w-12 h-12" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 text-center">Claude</h3>
+                <p className="text-xs text-gray-500 text-center mt-1">AI Assistant</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlegemini.svg" alt="Gemini" className="w-12 h-12" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 text-center">Gemini</h3>
+                <p className="text-xs text-gray-500 text-center mt-1">Google AI</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-12 h-12" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.7 14.0 C26.7 15.8 26.0 17.5 24.8 18.7 L24.8 18.7 C23.6 19.9 21.9 20.6 20.1 20.6 L7.9 20.6 C6.1 20.6 4.4 19.9 3.2 18.7 L3.2 18.7 C2.0 17.5 1.3 15.8 1.3 14.0 L1.3 14.0 C1.3 12.2 2.0 10.5 3.2 9.3 L3.2 9.3 C4.4 8.1 6.1 7.4 7.9 7.4 L20.1 7.4 C21.9 7.4 23.6 8.1 24.8 9.3 L24.8 9.3 C26.0 10.5 26.7 12.2 26.7 14.0 Z" fill="#1FB8CD"/>
+                    <path d="M20.2 14.0 C20.2 15.1 19.7 16.1 18.9 16.9 C18.1 17.7 17.1 18.2 16.0 18.2 C14.9 18.2 13.9 17.7 13.1 16.9 C12.3 16.1 11.8 15.1 11.8 14.0 C11.8 12.9 12.3 11.9 13.1 11.1 C13.9 10.3 14.9 9.8 16.0 9.8 C17.1 9.8 18.1 10.3 18.9 11.1 C19.7 11.9 20.2 12.9 20.2 14.0 Z" fill="white"/>
+                    <path d="M16.4 14.0 C16.4 14.2 16.3 14.4 16.2 14.5 C16.1 14.6 15.9 14.7 15.7 14.7 C15.5 14.7 15.3 14.6 15.2 14.5 C15.1 14.4 15.0 14.2 15.0 14.0 C15.0 13.8 15.1 13.6 15.2 13.5 C15.3 13.4 15.5 13.3 15.7 13.3 C15.9 13.3 16.1 13.4 16.2 13.5 C16.3 13.6 16.4 13.8 16.4 14.0 Z" fill="#1FB8CD"/>
+                  </svg>
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 text-center">Perplexity</h3>
+                <p className="text-xs text-gray-500 text-center mt-1">AI Search</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftbing.svg" alt="Bing AI" className="w-12 h-12" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 text-center">Bing AI</h3>
+                <p className="text-xs text-gray-500 text-center mt-1">Microsoft AI</p>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" alt="Llama" className="w-12 h-12" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-sm font-semibold text-gray-900 text-center">Llama</h3>
+                <p className="text-xs text-gray-500 text-center mt-1">Meta AI</p>
+              </div>
+            </div>
+            
+            {/* Additional AI Tools Grid */}
+            <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4">
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/midjourney.svg" alt="Midjourney" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Midjourney</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stability.svg" alt="Stable Diffusion" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Stable AI</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cohere.svg" alt="Cohere" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Cohere</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/huggingface.svg" alt="Hugging Face" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Hugging Face</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/replicate.svg" alt="Replicate" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Replicate</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/runwayml.svg" alt="Runway" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Runway</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jasper.svg" alt="Jasper" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Jasper</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/cursor.svg" alt="Cursor" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Cursor</h3>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-md p-4 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-2">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub Copilot" className="w-8 h-8" style={{filter: 'invert(0)'}} />
+                </div>
+                <h3 className="text-xs font-medium text-gray-900 text-center">Copilot</h3>
+              </div>
+            </div>
+            
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">...and 25+ more AI platforms continuously monitored</p>
+              <Link
+                href="/check"
+                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Check Your AI Visibility Now
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
