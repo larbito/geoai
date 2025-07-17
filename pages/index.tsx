@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#0ea5e9" />
+        <meta name="theme-color" content="#9333ea" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="ChatRank - AI Visibility Checker" />
