@@ -127,6 +127,16 @@ export default function Login() {
               </div>
             )}
 
+            {/* Supabase Configuration Warning */}
+            {!auth.isConfigured() && (
+              <div className="mb-6 p-4 bg-orange-50 border border-orange-200 rounded-xl">
+                <p className="text-orange-800 text-sm">
+                  <strong>Setup Required:</strong> Supabase authentication is not configured. 
+                  Please set up your environment variables to enable login functionality.
+                </p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email Field */}
               <div>

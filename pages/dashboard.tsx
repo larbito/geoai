@@ -10,6 +10,12 @@ export default function Dashboard() {
   const router = useRouter()
 
   useEffect(() => {
+    // Check if Supabase is configured
+    if (!auth.isConfigured()) {
+      setIsLoading(false)
+      return
+    }
+
     // Check if user is authenticated
     const checkAuth = async () => {
       const { user } = await auth.getCurrentUser()
@@ -47,6 +53,66 @@ export default function Dashboard() {
         <div className="text-center">
           <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600 mx-auto"></div>
           <p className="mt-4 text-neutral-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show setup message if Supabase is not configured
+  if (!auth.isConfigured()) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+              </svg>
+            </div>
+            
+            <h1 className="text-3xl font-bold text-neutral-900 mb-4">
+              Supabase Setup Required
+            </h1>
+            
+            <p className="text-lg text-neutral-600 mb-6">
+              To use authentication features, you need to configure Supabase. 
+              Please follow the setup guide to get started.
+            </p>
+            
+            <div className="space-y-4">
+              <Link
+                href="/SUPABASE_SETUP.md"
+                target="_blank"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                View Setup Guide
+              </Link>
+              
+              <br />
+              
+              <Link
+                href="/"
+                className="inline-flex items-center px-6 py-3 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-xl transition-all duration-200 shadow-lg border border-neutral-200"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Home
+              </Link>
+            </div>
+            
+            <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+              <p className="text-sm text-blue-800">
+                <strong>Note:</strong> This message appears because the environment variables 
+                <code className="bg-blue-100 px-1 rounded">NEXT_PUBLIC_SUPABASE_URL</code> and 
+                <code className="bg-blue-100 px-1 rounded">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> 
+                are not configured.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     )

@@ -156,6 +156,16 @@ export default function Register() {
               </div>
             )}
 
+            {/* Supabase Configuration Warning */}
+            {!auth.isConfigured() && (
+              <div className="mb-6 p-4 bg-orange-50 border border-orange-200 rounded-xl">
+                <p className="text-orange-800 text-sm">
+                  <strong>Setup Required:</strong> Supabase authentication is not configured. 
+                  Please set up your environment variables to enable registration functionality.
+                </p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Fields */}
               <div className="grid grid-cols-2 gap-4">
