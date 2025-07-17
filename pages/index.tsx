@@ -121,7 +121,7 @@ export default function Home() {
         {/* Enhanced Hero Section */}
         <section className="relative pt-20 pb-32 overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-blue-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-indigo-50"></div>
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
           
           {/* Clean Floating AI Platform Icons - Top 4 platforms only */}
@@ -169,7 +169,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Content */}
               <div className="text-center lg:text-left">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -178,7 +178,7 @@ export default function Home() {
                 
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                   Is Your Business
-                  <span className="block bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                     Visible in AI Search?
                   </span>
                 </h1>
@@ -190,7 +190,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Link
                     href="/check"
-                    className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     Check My Business Now
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,7 +200,7 @@ export default function Home() {
                   
                   <Link
                     href="#demo"
-                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-lg font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:border-primary-300 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-lg font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:border-purple-300 hover:text-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200"
                   >
                     Watch Demo
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -235,7 +235,7 @@ export default function Home() {
               {/* Right Column - Visual */}
               <div className="relative">
                 <div className="relative bg-white rounded-2xl shadow-2xl p-6 transform rotate-3 hover:rotate-1 transition-transform duration-500">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-600 to-blue-600 rounded-2xl blur opacity-25"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl blur opacity-25"></div>
                   <div className="relative bg-white rounded-xl p-6">
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
@@ -251,15 +251,15 @@ export default function Home() {
                           <span className="text-sm font-semibold text-gray-900">8/10 queries</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div className="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full w-4/5"></div>
+                          <div className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full w-4/5"></div>
                         </div>
                         
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-gray-600">Competitor Ranking</span>
-                          <span className="text-sm font-semibold text-primary-600">#2 of 15</span>
+                          <span className="text-sm font-semibold text-purple-600">#2 of 15</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div className="bg-gradient-to-r from-blue-500 to-primary-600 h-2 rounded-full w-3/5"></div>
+                                                      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-3/5"></div>
                         </div>
                         
                         <div className="pt-2 border-t border-gray-100">
@@ -273,7 +273,7 @@ export default function Home() {
                 {/* Floating Stats */}
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 transform -rotate-6">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary-600">94%</div>
+                    <div className="text-2xl font-bold text-purple-600">94%</div>
                     <div className="text-xs text-gray-600">Visibility Score</div>
                   </div>
                 </div>
@@ -295,7 +295,7 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Monitor Your Visibility Across 
-                <span className="block bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Every AI Platform
                 </span>
               </h2>
@@ -429,7 +429,7 @@ export default function Home() {
               <p className="text-gray-600 mb-6">...and 25+ more AI platforms continuously monitored</p>
               <Link
                 href="/check"
-                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Check Your AI Visibility Now
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -445,19 +445,19 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">10K+</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">10K+</div>
                 <div className="text-gray-600">Businesses Analyzed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">50M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">50M+</div>
                 <div className="text-gray-600">AI Queries Tested</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">85%</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">85%</div>
                 <div className="text-gray-600">Improved Visibility</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">24/7</div>
+                <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
                 <div className="text-gray-600">Monitoring</div>
               </div>
             </div>
