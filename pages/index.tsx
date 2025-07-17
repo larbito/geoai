@@ -127,8 +127,11 @@ export default function Home() {
           {/* Floating AI Platform Icons */}
           <div className="absolute top-16 left-8 lg:left-16 animate-float">
             <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">AI</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-green-100 rounded-xl flex items-center justify-center">
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                  <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91A6.046 6.046 0 0 0 17.094 2H6.906a6.046 6.046 0 0 0-4.672 2.91 5.985 5.985 0 0 0-.516 4.91L3.632 18.07A6.05 6.05 0 0 0 9.647 22h4.706a6.05 6.05 0 0 0 6.015-3.93l1.914-8.249Z" fill="#10A37F"/>
+                  <path d="M9.5 14.25h.75c.138 0 .25-.112.25-.25v-1.5c0-.138-.112-.25-.25-.25H9.5a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25Zm2.5 0h.75c.138 0 .25-.112.25-.25v-1.5c0-.138-.112-.25-.25-.25H12a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25Z" fill="white"/>
+                </svg>
               </div>
               <p className="text-xs text-gray-600 mt-2 text-center font-medium">ChatGPT</p>
             </div>
@@ -136,8 +139,13 @@ export default function Home() {
           
           <div className="absolute top-32 right-8 lg:right-20 animate-float-delayed">
             <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl flex items-center justify-center">
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                  <path d="M7.5 8.25C7.5 6.18 9.18 4.5 11.25 4.5S15 6.18 15 8.25v7.5c0 2.07-1.68 3.75-3.75 3.75S7.5 17.82 7.5 15.75v-7.5Z" fill="#FF6B35"/>
+                  <circle cx="11.25" cy="8.25" r="2" fill="white"/>
+                  <circle cx="11.25" cy="12" r="1.5" fill="white"/>
+                  <circle cx="11.25" cy="15.75" r="1" fill="white"/>
+                </svg>
               </div>
               <p className="text-xs text-gray-600 mt-2 text-center font-medium">Claude</p>
             </div>
@@ -145,8 +153,13 @@ export default function Home() {
           
           <div className="absolute top-60 left-1/4 animate-float" style={{ animationDelay: '1s' }}>
             <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm">G</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="8" fill="#4285F4"/>
+                  <path d="M12 4v8l5.66-5.66A8 8 0 0 0 12 4Z" fill="#EA4335"/>
+                  <path d="M20 12h-8l5.66 5.66A8 8 0 0 0 20 12Z" fill="#FBBC04"/>
+                  <path d="M12 20v-8l-5.66 5.66A8 8 0 0 0 12 20Z" fill="#34A853"/>
+                </svg>
               </div>
               <p className="text-xs text-gray-600 mt-2 text-center font-medium">Gemini</p>
             </div>
@@ -154,8 +167,11 @@ export default function Home() {
           
           <div className="absolute bottom-32 right-1/3 animate-float-delayed" style={{ animationDelay: '2s' }}>
             <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl flex items-center justify-center">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5Z" fill="#20B2AA"/>
+                  <path d="M10 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
               <p className="text-xs text-gray-600 mt-2 text-center font-medium">Perplexity</p>
             </div>
@@ -163,17 +179,24 @@ export default function Home() {
           
           <div className="absolute bottom-20 left-8 lg:left-20 animate-float" style={{ animationDelay: '0.5s' }}>
             <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm">B</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl flex items-center justify-center">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="3" width="20" height="18" rx="2" fill="#0078D4"/>
+                  <path d="M8 8h8M8 12h8M8 16h5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
               </div>
-              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Bing</p>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Bing AI</p>
             </div>
           </div>
           
           <div className="absolute top-48 right-1/4 animate-float-delayed" style={{ animationDelay: '1.5s' }}>
             <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm">L</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 12C3 7.03 7.03 3 12 3s9 4.03 9 9-4.03 9-9 9-9-4.03-9-9Z" fill="#8B5CF6"/>
+                  <path d="M8 10.5L12 8l4 2.5v5L12 18l-4-2.5v-5Z" fill="white"/>
+                  <circle cx="12" cy="12" r="2" fill="#8B5CF6"/>
+                </svg>
               </div>
               <p className="text-xs text-gray-600 mt-2 text-center font-medium">Llama</p>
             </div>
