@@ -1,270 +1,196 @@
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { auth } from '../lib/supabase'
+import Link from 'next/link'
 
 export default function Dashboard() {
   const [user, setUser] = useState<any>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
-    // Check if Supabase is configured
-    if (!auth.isConfigured()) {
-      setIsLoading(false)
+    // Check for fake authentication
+    const isAuthenticated = localStorage.getItem('fake_authenticated')
+    const userData = localStorage.getItem('fake_user')
+
+    if (!isAuthenticated || !userData) {
+      router.push('/login')
       return
     }
 
-    // Check if user is authenticated
-    const checkAuth = async () => {
-      const { user } = await auth.getCurrentUser()
-      if (!user) {
-        router.push('/login')
-        return
-      }
-      setUser(user)
-      setIsLoading(false)
+    try {
+      const parsedUser = JSON.parse(userData)
+      setUser(parsedUser)
+    } catch (error) {
+      console.error('Error parsing user data:', error)
+      router.push('/login')
+      return
     }
 
-    checkAuth()
-
-    // Listen for auth changes
-    const { data: { subscription } } = auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_OUT' || !session) {
-        router.push('/login')
-      } else if (session?.user) {
-        setUser(session.user)
-        setIsLoading(false)
-      }
-    })
-
-    return () => subscription.unsubscribe()
+    setLoading(false)
   }, [router])
 
-  const handleSignOut = async () => {
-    await auth.signOut()
+  const handleSignOut = () => {
+    // Clear fake authentication
+    localStorage.removeItem('fake_authenticated')
+    localStorage.removeItem('fake_user')
     router.push('/')
   }
 
-  if (isLoading) {
+  if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600 mx-auto"></div>
-          <p className="mt-4 text-neutral-600">Loading...</p>
-        </div>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     )
   }
 
-  // Show setup message if Supabase is not configured
-  if (!auth.isConfigured()) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-8">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-              </svg>
-            </div>
-            
-            <h1 className="text-3xl font-bold text-neutral-900 mb-4">
-              Supabase Setup Required
-            </h1>
-            
-            <p className="text-lg text-neutral-600 mb-6">
-              To use authentication features, you need to configure Supabase. 
-              Please follow the setup guide to get started.
-            </p>
-            
-            <div className="space-y-4">
-              <Link
-                href="/SUPABASE_SETUP.md"
-                target="_blank"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                View Setup Guide
-              </Link>
-              
-              <br />
-              
-              <Link
-                href="/"
-                className="inline-flex items-center px-6 py-3 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-xl transition-all duration-200 shadow-lg border border-neutral-200"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                Back to Home
-              </Link>
-            </div>
-            
-            <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-              <p className="text-sm text-blue-800">
-                <strong>Note:</strong> This message appears because the environment variables 
-                <code className="bg-blue-100 px-1 rounded">NEXT_PUBLIC_SUPABASE_URL</code> and 
-                <code className="bg-blue-100 px-1 rounded">NEXT_PUBLIC_SUPABASE_ANON_KEY</code> 
-                are not configured.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+  if (!user) {
+    return null
   }
+
+  const firstName = user.user_metadata?.first_name || user.email?.split('@')[0] || 'User'
+  const lastName = user.user_metadata?.last_name || ''
+  const company = user.user_metadata?.company || ''
+  const initials = `${firstName[0] || ''}${lastName[0] || ''}`.toUpperCase()
 
   return (
-    <>
-      <Head>
-        <title>Dashboard - ChatRank</title>
-        <meta name="description" content="ChatRank AI Visibility Analytics Dashboard" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        
-        {/* Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-      </Head>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                ChatRank
+              </h1>
+            </Link>
 
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-        {/* Navigation */}
-        <nav className="bg-white/80 backdrop-blur-xl border-b border-neutral-200/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-4">
-              {/* Logo */}
-              <div className="flex items-center">
-                <Link href="/" className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">CR</span>
-                  </div>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                    ChatRank
-                  </span>
-                </Link>
-              </div>
-
-              {/* User Menu */}
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-medium text-sm">
-                      {user?.user_metadata?.first_name?.charAt(0) || user?.email?.charAt(0) || 'U'}
-                    </span>
-                  </div>
-                  <span className="text-neutral-700 font-medium">
-                    {user?.user_metadata?.first_name || user?.email}
-                  </span>
+            {/* User Menu */}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-medium">{initials}</span>
                 </div>
-                <button
-                  onClick={handleSignOut}
-                  className="px-4 py-2 text-neutral-600 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 rounded-lg"
-                >
-                  Sign Out
-                </button>
+                <div className="hidden sm:block">
+                  <p className="text-sm font-medium text-gray-700">
+                    {firstName} {lastName}
+                  </p>
+                  <p className="text-xs text-gray-500">{user.email}</p>
+                </div>
               </div>
+              <button
+                onClick={handleSignOut}
+                className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              >
+                Sign out
+              </button>
             </div>
           </div>
-        </nav>
+        </div>
+      </header>
 
-        {/* Main Content */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Welcome Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
-              Welcome to{' '}
-              <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                ChatRank
-              </span>
-            </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Your AI visibility analytics dashboard. Start monitoring how AI tools recommend your business.
-            </p>
-          </div>
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Welcome Section */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Welcome back, {firstName}!
+          </h1>
+          <p className="text-gray-600">
+            Here's your AI visibility dashboard overview
+          </p>
+        </div>
 
-          {/* Quick Actions */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Quick Actions */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-xl shadow-sm border p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Start Analysis</h3>
-              <p className="text-neutral-600 mb-4">Begin your first AI visibility analysis</p>
-              <button className="w-full px-4 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200">
-                Get Started
-              </button>
+              <h3 className="text-lg font-semibold text-gray-900">Start Analysis</h3>
             </div>
+            <p className="text-gray-600 mb-4">Begin tracking your AI visibility across different platforms</p>
+            <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-2 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-colors">
+              Start Now
+            </button>
+          </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div className="bg-white rounded-xl shadow-sm border p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">View Reports</h3>
-              <p className="text-neutral-600 mb-4">Access your detailed AI visibility reports</p>
-              <button className="w-full px-4 py-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-semibold rounded-xl transition-all duration-200">
-                Coming Soon
-              </button>
+              <h3 className="text-lg font-semibold text-gray-900">View Reports</h3>
             </div>
+            <p className="text-gray-600 mb-4">Access your detailed AI visibility reports and insights</p>
+            <button className="w-full bg-gray-100 text-gray-600 py-2 px-4 rounded-lg font-medium cursor-not-allowed">
+              Coming Soon
+            </button>
+          </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-6 hover:shadow-xl transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-white rounded-xl shadow-sm border p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Settings</h3>
-              <p className="text-neutral-600 mb-4">Configure your account and preferences</p>
-              <button className="w-full px-4 py-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-semibold rounded-xl transition-all duration-200">
-                Coming Soon
-              </button>
+              <h3 className="text-lg font-semibold text-gray-900">Settings</h3>
+            </div>
+            <p className="text-gray-600 mb-4">Configure your account and notification preferences</p>
+            <button className="w-full bg-gray-100 text-gray-600 py-2 px-4 rounded-lg font-medium cursor-not-allowed">
+              Coming Soon
+            </button>
+          </div>
+        </div>
+
+        {/* Stats Overview */}
+        <div className="bg-white rounded-xl shadow-sm border p-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">AI Visibility Overview</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2">--</div>
+              <p className="text-sm text-gray-600">Total Queries</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-cyan-600 mb-2">--</div>
+              <p className="text-sm text-gray-600">AI Mentions</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-600 mb-2">--</div>
+              <p className="text-sm text-gray-600">Visibility Score</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600 mb-2">--</div>
+              <p className="text-sm text-gray-600">Ranking Position</p>
             </div>
           </div>
-
-          {/* Stats Overview */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-8">
-            <h2 className="text-2xl font-bold text-neutral-900 mb-6">Your AI Visibility Overview</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">--</div>
-                <div className="text-sm text-neutral-600">AI Platforms Tracked</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-secondary-600 mb-2">--</div>
-                <div className="text-sm text-neutral-600">Queries Analyzed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">--%</div>
-                <div className="text-sm text-neutral-600">Visibility Score</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">--</div>
-                <div className="text-sm text-neutral-600">Improvement Areas</div>
-              </div>
-            </div>
-
-            <div className="mt-8 text-center">
-              <p className="text-neutral-600 mb-4">
-                Ready to start tracking your AI visibility? Begin your first analysis now.
-              </p>
-              <button className="px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl">
-                Start Your First Analysis
-              </button>
-            </div>
+          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p className="text-sm text-blue-800">
+              <strong>Get Started:</strong> Complete your first analysis to see your AI visibility metrics here.
+            </p>
           </div>
-        </main>
-      </div>
-    </>
+        </div>
+
+        {/* Demo Notice */}
+        <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <div className="flex items-center space-x-2">
+            <svg className="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-sm text-yellow-800">
+              <strong>Demo Mode:</strong> This is a demonstration dashboard. In the full version, you'll see real AI visibility analytics and insights.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
   )
 } 
