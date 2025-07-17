@@ -167,10 +167,10 @@ export default function Pricing() {
 
       <main className="pt-20">
         {/* Header Section */}
-        <section className="py-24 bg-gradient-to-br from-primary-50 via-white to-blue-50">
+        <section className="py-24 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Simple, Transparent <span className="text-primary-600">Pricing</span>
+                              Simple, Transparent <span className="text-purple-600">Pricing</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
               Choose the perfect plan to monitor and dominate your AI visibility. All plans include a 7-day free trial.
@@ -183,7 +183,7 @@ export default function Pricing() {
                   onClick={() => setBillingPeriod('monthly')}
                   className={`px-6 py-2 rounded-md font-medium transition-all ${
                     billingPeriod === 'monthly'
-                      ? 'bg-white text-primary-600 shadow-sm'
+                      ? 'bg-white text-purple-600 shadow-sm'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -193,7 +193,7 @@ export default function Pricing() {
                   onClick={() => setBillingPeriod('yearly')}
                   className={`px-6 py-2 rounded-md font-medium transition-all ${
                     billingPeriod === 'yearly'
-                      ? 'bg-white text-primary-600 shadow-sm'
+                      ? 'bg-white text-purple-600 shadow-sm'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -216,13 +216,13 @@ export default function Pricing() {
                   key={plan.name}
                   className={`relative rounded-2xl ${
                     plan.popular
-                      ? 'border-2 border-primary-500 shadow-2xl transform scale-105'
+                      ? 'border-2 border-purple-500 shadow-2xl transform scale-105'
                       : 'border border-gray-200 shadow-lg'
                   } bg-white p-8 hover:shadow-xl transition-all duration-300`}
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-primary-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                      <span className="bg-purple-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
                         Most Popular
                       </span>
                     </div>
@@ -262,7 +262,7 @@ export default function Pricing() {
                       href={plan.buttonText === 'Contact Sales' ? '/contact' : '/check'}
                       className={`block w-full py-4 px-6 rounded-xl font-semibold text-center transition-all duration-200 ${
                         plan.popular
-                          ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1'
+                          ? 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1'
                           : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                       }`}
                     >
@@ -323,19 +323,19 @@ export default function Pricing() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-primary-600 to-blue-700">
+        <section className="py-24 bg-gradient-to-br from-purple-600 to-indigo-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
+                          <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
               Join thousands of businesses using ChatRank to dominate AI search results. Start your free trial today.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/check"
-                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-primary-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-xl text-purple-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Start Free Trial
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@ export default function Pricing() {
               
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-semibold rounded-xl text-white bg-transparent hover:bg-white hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-semibold rounded-xl text-white bg-transparent hover:bg-white hover:text-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200"
               >
                 Contact Sales
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -134,10 +134,10 @@ export default function Contact() {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-primary-50 via-white to-blue-50">
+        <section className="py-24 bg-gradient-to-br from-purple-50 via-white to-indigo-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Get in <span className="text-primary-600">Touch</span>
+                              Get in <span className="text-purple-600">Touch</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
               We're here to help you dominate AI search results. Reach out to our team for support, sales inquiries, or partnership opportunities.
@@ -150,15 +150,15 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {/* Sales */}
-              <div className="text-center p-8 rounded-2xl bg-primary-50 hover:bg-primary-100 transition-colors duration-300">
-                <div className="flex items-center justify-center w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6">
+                              <div className="text-center p-8 rounded-2xl bg-purple-50 hover:bg-purple-100 transition-colors duration-300">
+                  <div className="flex items-center justify-center w-16 h-16 bg-purple-500 rounded-2xl mx-auto mb-6">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Sales Inquiries</h3>
                 <p className="text-gray-600 mb-6">Ready to get started? Let's discuss the perfect plan for your business needs.</p>
-                <a href="mailto:sales@chatrank.ai" className="text-primary-600 font-semibold hover:text-primary-700">
+                                  <a href="mailto:sales@chatrank.ai" className="text-purple-600 font-semibold hover:text-purple-700">
                   sales@chatrank.ai
                 </a>
               </div>
@@ -214,7 +214,7 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -229,7 +229,7 @@ export default function Contact() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
                         placeholder="john@company.com"
                       />
                     </div>
@@ -246,7 +246,7 @@ export default function Contact() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
                         placeholder="Your Company"
                       />
                     </div>
@@ -260,7 +260,7 @@ export default function Contact() {
                         required
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors"
                       >
                         <option value="general">General Inquiry</option>
                         <option value="sales">Sales</option>
@@ -282,14 +282,14 @@ export default function Contact() {
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors resize-none"
                       placeholder="Tell us how we can help you..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-primary-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="w-full bg-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     Send Message
                     <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -306,7 +306,7 @@ export default function Contact() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Office</h3>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-6 h-6 text-primary-600 mt-1">
+                      <div className="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -323,7 +323,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-6 h-6 text-primary-600 mt-1">
+                      <div className="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
@@ -335,7 +335,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-6 h-6 text-primary-600 mt-1">
+                      <div className="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
