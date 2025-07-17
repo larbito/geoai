@@ -11,7 +11,7 @@ export default function Home() {
         <title>ChatRank - AI Visibility Checker for Modern Businesses</title>
         <meta name="description" content="Discover how your business appears in AI search results. Get comprehensive AI visibility reports and outrank competitors in ChatGPT recommendations." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0ea5e9" />
@@ -30,14 +30,7 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  ChatRank
-                </span>
+                <img src="/logo.png" alt="ChatRank" className="h-10 w-auto" />
               </Link>
             </div>
 
@@ -758,13 +751,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <span className="text-2xl font-bold">ChatRank</span>
+              <div className="flex items-center mb-6">
+                <img src="/logo.png" alt="ChatRank" className="h-8 w-auto" />
               </div>
               <p className="text-gray-400 mb-6 max-w-md">
                 The leading AI visibility platform helping businesses understand and improve their presence in AI search results.

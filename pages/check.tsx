@@ -9,7 +9,7 @@ export default function Check() {
         <title>Check Your Business - ChatRank</title>
         <meta name="description" content="Check how your business appears in AI search results" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0ea5e9" />

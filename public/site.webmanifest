@@ -4,9 +4,9 @@
   "description": "Find out if ChatGPT recommends your brand when users ask for tools, services, or alternatives",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/favicon.png",
       "sizes": "32x32",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ],
   "theme_color": "#0ea5e9",
