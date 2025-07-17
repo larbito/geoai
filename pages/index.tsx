@@ -124,10 +124,60 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-blue-50"></div>
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
           
-          {/* Floating Elements */}
-          <div className="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full opacity-60 animate-float"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-blue-200 rounded-full opacity-40 animate-float-delayed"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-primary-300 rounded-full opacity-30 animate-float"></div>
+          {/* Floating AI Platform Icons */}
+          <div className="absolute top-16 left-8 lg:left-16 animate-float">
+            <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-lg">AI</span>
+              </div>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">ChatGPT</p>
+            </div>
+          </div>
+          
+          <div className="absolute top-32 right-8 lg:right-20 animate-float-delayed">
+            <div className="bg-white rounded-2xl shadow-lg p-4 border border-gray-100 opacity-80 hover:opacity-100 transition-opacity">
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-lg">C</span>
+              </div>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Claude</p>
+            </div>
+          </div>
+          
+          <div className="absolute top-60 left-1/4 animate-float" style={{ animationDelay: '1s' }}>
+            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-sm">G</span>
+              </div>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Gemini</p>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-32 right-1/3 animate-float-delayed" style={{ animationDelay: '2s' }}>
+            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-sm">P</span>
+              </div>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Perplexity</p>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-20 left-8 lg:left-20 animate-float" style={{ animationDelay: '0.5s' }}>
+            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-sm">B</span>
+              </div>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Bing</p>
+            </div>
+          </div>
+          
+          <div className="absolute top-48 right-1/4 animate-float-delayed" style={{ animationDelay: '1.5s' }}>
+            <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100 opacity-70 hover:opacity-100 transition-opacity">
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-sm">L</span>
+              </div>
+              <p className="text-xs text-gray-600 mt-2 text-center font-medium">Llama</p>
+            </div>
+          </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
