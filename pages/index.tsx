@@ -289,6 +289,159 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Interactive Demo Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                See Your Business Through AI Eyes
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Here's what a typical ChatRank report reveals about your AI visibility
+              </p>
+            </div>
+            
+            <div className="bg-gradient-to-br from-gray-50 to-purple-50 rounded-3xl p-8 md:p-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Demo Visual */}
+                <div className="order-2 lg:order-1">
+                  <div className="bg-white rounded-2xl shadow-2xl p-6 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">AI Visibility Report</h4>
+                          <p className="text-sm text-gray-500">Generated in real-time</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="ChatGPT" className="w-5 h-5" />
+                          </div>
+                          <span className="font-medium text-gray-900">ChatGPT</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-2xl font-bold text-green-600">87%</span>
+                          <div className="w-12 h-2 bg-gray-200 rounded-full">
+                            <div className="w-10 h-2 bg-green-500 rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" alt="Claude" className="w-5 h-5" />
+                          </div>
+                          <span className="font-medium text-gray-900">Claude</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-2xl font-bold text-yellow-600">64%</span>
+                          <div className="w-12 h-2 bg-gray-200 rounded-full">
+                            <div className="w-8 h-2 bg-yellow-500 rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-4 bg-red-50 rounded-lg border border-red-200">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlegemini.svg" alt="Gemini" className="w-5 h-5" />
+                          </div>
+                          <span className="font-medium text-gray-900">Gemini</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-2xl font-bold text-red-600">23%</span>
+                          <div className="w-12 h-2 bg-gray-200 rounded-full">
+                            <div className="w-3 h-2 bg-red-500 rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 p-4 bg-purple-50 rounded-lg">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium text-gray-900">Overall AI Visibility Score</span>
+                        <span className="text-3xl font-bold text-purple-600">58%</span>
+                      </div>
+                      <div className="mt-2 w-full h-3 bg-gray-200 rounded-full">
+                        <div className="w-3/5 h-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"></div>
+                      </div>
+                      <p className="text-sm text-gray-600 mt-2">Room for improvement detected</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Demo Content */}
+                <div className="order-1 lg:order-2">
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Strong ChatGPT Presence</h4>
+                        <p className="text-gray-600">Your business appears in 87% of relevant ChatGPT queries, ranking #2 on average</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Claude Opportunity</h4>
+                        <p className="text-gray-600">64% visibility on Claude - competitor "TechCorp" is outranking you</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <svg className="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Gemini Gap</h4>
+                        <p className="text-gray-600">Only 23% visibility on Google's Gemini - major growth opportunity</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8">
+                    <Link
+                      href="/check"
+                      className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    >
+                      Get Your Free Report
+                      <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* AI Platforms Showcase Section */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -459,6 +612,37 @@ export default function Home() {
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
                 <div className="text-gray-600">Monitoring</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Logos Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <p className="text-lg text-gray-600 mb-8">Trusted by forward-thinking companies worldwide</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-300">
+              {/* Mock customer logos - replace with real ones */}
+              <div className="flex items-center justify-center h-12">
+                <div className="text-2xl font-bold text-gray-400">TechFlow</div>
+              </div>
+              <div className="flex items-center justify-center h-12">
+                <div className="text-2xl font-bold text-gray-400">InnovateCo</div>
+              </div>
+              <div className="flex items-center justify-center h-12">
+                <div className="text-2xl font-bold text-gray-400">DataSync</div>
+              </div>
+              <div className="flex items-center justify-center h-12">
+                <div className="text-2xl font-bold text-gray-400">CloudTech</div>
+              </div>
+              <div className="flex items-center justify-center h-12">
+                <div className="text-2xl font-bold text-gray-400">NextGen</div>
+              </div>
+              <div className="flex items-center justify-center h-12">
+                <div className="text-2xl font-bold text-gray-400">FutureApp</div>
               </div>
             </div>
           </div>
@@ -686,17 +870,88 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-gray-600">
+                Everything you need to know about AI visibility monitoring
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">How accurate are your AI visibility reports?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our reports are based on real queries sent to actual AI platforms in real-time. We test hundreds of variations of relevant search queries daily and provide you with authentic, unbiased results directly from ChatGPT, Claude, Gemini, and other AI tools.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">What if I'm not satisfied with the results?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We offer a 30-day money-back guarantee. If you're not completely satisfied with your ChatRank experience or don't see actionable insights that help improve your AI visibility, we'll refund your payment in full.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">How long does it take to see improvements?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Most businesses see improved AI visibility within 2-4 weeks of implementing our recommendations. However, the timeline depends on factors like your industry competitiveness and how quickly you can execute the suggested optimizations.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Do you monitor all AI platforms?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We monitor 25+ AI platforms including ChatGPT, Claude, Gemini, Perplexity, Bing Chat, and many others. Our platform is constantly expanding to include new AI tools as they gain prominence in the market.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Is my business data secure?</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Absolutely. We use enterprise-grade security with SOC 2 compliance, end-to-end encryption, and never share your business data with competitors or third parties. Your information is completely confidential and secure.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">Still have questions?</p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-purple-600 text-base font-semibold rounded-xl text-purple-600 bg-white hover:bg-purple-50 transition-all duration-200"
+              >
+                Contact Our Team
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section className="py-24 bg-gradient-to-br from-primary-600 to-purple-700 relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Limited Time: Double AI Platform Coverage
+            </div>
+            
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Dominate AI Search Results?
             </h2>
             <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of businesses using ChatRank to monitor, analyze, and improve their AI visibility. Start your free trial today.
+              Join 10,000+ businesses using ChatRank to monitor, analyze, and improve their AI visibility. Your competitors are already optimizing for AI search - don't get left behind.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -721,24 +976,38 @@ export default function Home() {
               </Link>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-primary-100">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm text-primary-100 mb-8">
+              <div className="flex items-center justify-center">
+                <svg className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 7-day free trial
               </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center justify-center">
+                <svg className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 No credit card required
               </div>
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center justify-center">
+                <svg className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                Setup in minutes
+                30-day money-back guarantee
+              </div>
+              <div className="flex items-center justify-center">
+                <svg className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Setup in 2 minutes
+              </div>
+            </div>
+
+            {/* Urgency Counter */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto">
+              <p className="text-white mb-4">⚡ <strong>Limited Time Offer:</strong> Get 2 months of Professional plan for free</p>
+              <div className="text-lg text-yellow-300 font-mono">
+                Join 347 businesses who upgraded this week
               </div>
             </div>
           </div>
