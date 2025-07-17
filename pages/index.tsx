@@ -617,37 +617,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Customer Logos Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-lg text-gray-600 mb-8">Trusted by forward-thinking companies worldwide</p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              {/* Mock customer logos - replace with real ones */}
-              <div className="flex items-center justify-center h-12">
-                <div className="text-2xl font-bold text-gray-400">TechFlow</div>
-              </div>
-              <div className="flex items-center justify-center h-12">
-                <div className="text-2xl font-bold text-gray-400">InnovateCo</div>
-              </div>
-              <div className="flex items-center justify-center h-12">
-                <div className="text-2xl font-bold text-gray-400">DataSync</div>
-              </div>
-              <div className="flex items-center justify-center h-12">
-                <div className="text-2xl font-bold text-gray-400">CloudTech</div>
-              </div>
-              <div className="flex items-center justify-center h-12">
-                <div className="text-2xl font-bold text-gray-400">NextGen</div>
-              </div>
-              <div className="flex items-center justify-center h-12">
-                <div className="text-2xl font-bold text-gray-400">FutureApp</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* How It Works Section */}
         <section id="how-it-works" className="py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -870,66 +839,153 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Enhanced FAQ Section */}
+        <section className="py-24 bg-gradient-to-br from-gray-50 to-purple-50">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-6">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Got Questions? We Have Answers
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Frequently Asked Questions
               </h2>
-              <p className="text-xl text-gray-600">
-                Everything you need to know about AI visibility monitoring
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Get instant answers to the most common questions about AI visibility monitoring and ChatRank
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">How accurate are your AI visibility reports?</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Our reports are based on real queries sent to actual AI platforms in real-time. We test hundreds of variations of relevant search queries daily and provide you with authentic, unbiased results directly from ChatGPT, Claude, Gemini, and other AI tools.
-                </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Left Column */}
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">How accurate are your AI visibility reports?</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Our reports are based on <strong>real queries sent to actual AI platforms</strong> in real-time. We test hundreds of variations daily and provide authentic, unbiased results directly from ChatGPT, Claude, Gemini, and 25+ other AI tools.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">What if I'm not satisfied?</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        We offer a <strong>30-day money-back guarantee</strong>. If you're not completely satisfied or don't see actionable insights that help improve your AI visibility, we'll refund your payment in full - no questions asked.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">How long to see improvements?</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Most businesses see improved AI visibility within <strong>2-4 weeks</strong> of implementing our recommendations. Timeline depends on industry competitiveness and how quickly you execute optimizations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">What if I'm not satisfied with the results?</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We offer a 30-day money-back guarantee. If you're not completely satisfied with your ChatRank experience or don't see actionable insights that help improve your AI visibility, we'll refund your payment in full.
-                </p>
-              </div>
+              {/* Right Column */}
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Do you monitor all AI platforms?</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        We monitor <strong>25+ AI platforms</strong> including ChatGPT, Claude, Gemini, Perplexity, Bing Chat, and many others. Our platform constantly expands to include new AI tools as they gain market prominence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">How long does it take to see improvements?</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Most businesses see improved AI visibility within 2-4 weeks of implementing our recommendations. However, the timeline depends on factors like your industry competitiveness and how quickly you can execute the suggested optimizations.
-                </p>
-              </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Is my business data secure?</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Absolutely. We use <strong>enterprise-grade security</strong> with SOC 2 compliance, end-to-end encryption, and never share your business data with competitors or third parties. Your information is completely confidential.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Do you monitor all AI platforms?</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We monitor 25+ AI platforms including ChatGPT, Claude, Gemini, Perplexity, Bing Chat, and many others. Our platform is constantly expanding to include new AI tools as they gain prominence in the market.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Is my business data secure?</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Absolutely. We use enterprise-grade security with SOC 2 compliance, end-to-end encryption, and never share your business data with competitors or third parties. Your information is completely confidential and secure.
-                </p>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+                      <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">What's included in the free trial?</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        Get <strong>full access to all features</strong> for 7 days: complete AI visibility reports, competitor analysis, actionable recommendations, and 24/7 support. No credit card required to start.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="text-center mt-12">
-              <p className="text-gray-600 mb-6">Still have questions?</p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-purple-600 text-base font-semibold rounded-xl text-purple-600 bg-white hover:bg-purple-50 transition-all duration-200"
-              >
-                Contact Our Team
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </Link>
+            <div className="text-center mt-16">
+              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Still have questions?</h3>
+                <p className="text-gray-600 mb-6">Our AI visibility experts are here to help. Get personalized answers and see how ChatRank can transform your business's AI presence.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-6 py-3 border-2 border-purple-600 text-base font-semibold rounded-xl text-purple-600 bg-white hover:bg-purple-50 transition-all duration-200"
+                  >
+                    Contact Our Team
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/check"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    Start Free Trial
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
